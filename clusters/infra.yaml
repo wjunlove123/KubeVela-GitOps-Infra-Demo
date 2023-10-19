@@ -9,7 +9,7 @@ spec:
       properties:
         repoType: git
         url: https://github.com/cnych/KubeVela-GitOps-Infra-Demo
-        secretRef: git-secret
+        # secretRef: git-secret
         pullInterval: 10m
         git:
           branch: main
