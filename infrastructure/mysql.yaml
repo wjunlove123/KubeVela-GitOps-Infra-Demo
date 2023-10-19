@@ -31,5 +31,5 @@ spec:
         metadata:
           name: mysql-cluster
         spec:
-          replicas: 2
+          replicas: 1
           secretName: mysql-secret
