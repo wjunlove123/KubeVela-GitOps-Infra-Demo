@@ -5,17 +5,17 @@ metadata:
   namespace: default
 spec:
   components:
-    - name: mysql-controller
+    - name: db-operator
       type: helm
       properties:
         repoType: helm
         url: https://presslabs.github.io/charts
-        chart: mysql-operator
-        version: "0.4.0"
+        chart: db-operator
+        version: "v0.7.0"
     - name: mysql-cluster
       type: raw
       dependsOn:
-        - mysql-controller
+        - db-operator
       properties:
         apiVersion: mysql.presslabs.org/v1alpha1
         kind: MysqlCluster
