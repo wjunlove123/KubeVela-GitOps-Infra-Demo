@@ -1,12 +1,12 @@
-apiVersion: v1
-kind: Secret
-metadata:
-  name: mysql-secret
-  namespace: default
-type: Opaque
-data:
-  ROOT_PASSWORD: cm9vdDMyMQo=
----
+# apiVersion: v1
+# kind: Secret
+# metadata:
+#   name: mysql-secret
+#   namespace: default
+# type: Opaque
+# data:
+#   ROOT_PASSWORD: cm9vdDMyMQo=
+# ---
 apiVersion: core.oam.dev/v1beta1
 kind: Application
 metadata:
