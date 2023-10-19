@@ -1,3 +1,11 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mysql-secret
+type: Opaque
+data:
+  ROOT_PASSWORD: cm9vdDMyMQo=
+---
 apiVersion: core.oam.dev/v1beta1
 kind: Application
 metadata:
@@ -5,17 +13,20 @@ metadata:
   namespace: default
 spec:
   components:
-    - name: db-operator
+    - name: mysql-operator
       type: helm
       properties:
         repoType: helm
-        url: https://presslabs.github.io/charts
-        chart: db-operator
+        url: https://helm-charts.bitpoke.io
+        chart: mysql-operator
         version: "v0.7.0"
+        values:
+          image: gcr.io/pl-infra/db-operator:latest
+          orchestrator.image: gcr.io/pl-infra/db-operator-orchestrator:latest
     - name: mysql-cluster
       type: raw
       dependsOn:
-        - db-operator
+        - mysql-operator
       properties:
         apiVersion: mysql.presslabs.org/v1alpha1
         kind: MysqlCluster
