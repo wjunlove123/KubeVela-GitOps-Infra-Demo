@@ -19,8 +19,14 @@ spec:
                 name: mysql-secret
                 key: ROOT_PASSWORD
       traits:
-        - type: ingress
+        - type: scaler
           properties:
-            domain: testsvc.example.com
+            replicas: 1
+        - type: gateway
+          properties:
+            class: nginx
+            classInSpec: true
+            domain: vela-gitops-demo.k8s.local
             http:
               /: 8088
+            pathType: ImplementationSpecific
