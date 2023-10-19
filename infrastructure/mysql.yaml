@@ -19,10 +19,6 @@ spec:
         repoType: helm
         url: https://helm-charts.bitpoke.io
         chart: mysql-operator
-        version: "v0.7.0"
-        values:
-          image: gcr.io/pl-infra/db-operator:latest
-          orchestrator.image: gcr.io/pl-infra/db-operator-orchestrator:latest
     - name: mysql-cluster
       type: raw
       dependsOn:
