@@ -8,7 +8,7 @@ spec:
     - name: my-server
       type: webservice
       properties:
-        image: cnych/kubevela-gitops-demo:main-aa43906d-1697720654 # {"$imagepolicy": "default:apps"}
+        image: wanyulingyun/kubevela-gitops-demo:main-14857d28-1699326693 # {"$imagepolicy": "default:apps"}
         port: 8088
         env:
           - name: DB_HOST
